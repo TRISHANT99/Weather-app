@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{>headerLinks}}
+</head>
+
+<body>
+    {{>navbar}}
+
+    <!-- main header  -->
+    <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="row">
+
+                    <!-- left side div  -->
+                    <div class="p-5 main_header_right align-items-center">
+                        <figure>
+                            <img src="images/404error.jpg" alt="pic" class="img-fluid">
+                        </figure>
+                        <h2>Something went wrong //{{errorMsg}}</h2>
+                        <a href="/"><button class="back">Go Back</button></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- footer code  -->
+        {{>footer}}
+
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

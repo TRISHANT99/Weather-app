@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{>headerLinks}}
+</head>
+
+<body>
+
+    {{>navbar}}
+    <!-- main header  -->
+    <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="main_content">
+                    <form class="temp_form">
+                        <input type="text" id="cityName" placeholder="Enter your city name" autocomplete="off">
+                        <input type="submit" value="search" id="submitBtn">
+                    </form>
+                </div>
+                <div class="tempInformation">
+                    <div class="top_layer">
+                        <p id="day">Tuesday</p>
+                        <p class="today_date">13 Oct</p>
+                    </div>
+                    <div class="main_layer">
+                        <p id="city_name">Get Output</p>
+                        <div class="middle_layer data_hide">
+                            <p id="temp"><span class="temp_real_val">0</span><sup>o</sup>C</p>
+                            <p id="temp_status">
+                                <i class="fa fa-cloud" aria-hidden="true"></i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{!-- footer code --}}
+    {{>footer}}
+
+    <script src="js/main.js"></script>
+    <script>
+        let day = document.getElementById("day");
+        let today_date = document.querySelector(".today_date");
+
+        const numOfDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",];
+
+        const printDate = () => {
+            var date = new Date();
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            today_date.innerHTML = day + "/" + month + "/" + year;
+
+        }
+
+        const getCurrentDay = () => {
+
+            var date = new Date();
+            var today = date.getDay();
+            var currentDay = numOfDay[today];
+            console.log(currentDay)
+            day.innerHTML = currentDay;
+        }
+        printDate();
+        getCurrentDay();
+    </script>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
